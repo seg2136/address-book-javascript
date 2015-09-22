@@ -2,16 +2,145 @@
   display: none;
 }
 
-.contact {
+.contacts {
   cursor: pointer;
   color: #0088cc;
 }
 
-.contact:hover {
+.contacts:hover {
   text-decoration: underline;
 }
 
 #add-address {
   text-decoration: underline;
   cursor: pointer;
+}
+
+#heading {
+  color: #000000;
+  text-shadow: 2px 2px #009900;
+}
+
+.smiley {
+  width: 300px;
+  height: 300px;
+  background: rgb(255,192,0);
+  background: radial-gradient(ellipse at center, #ffc000 0%,#ffac00 100%);
+  border-radius: 50%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50px;
+  animation: move 10s infinite;
+}
+
+.leftEye, .rightEye {
+  width: 50px;
+  height: 50px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.leftEye {
+  left: 75px;
+  top: 75px;
+}
+
+.rightEye {
+  right: 75px;
+  top: 75px;
+  animation: blink 7s infinite;
+}
+
+.mouth {
+  width: 200px;
+  height: 75px;
+  background: black;
+  border-radius: 10px 10px 75px 75px;
+  // Webkit specific
+  -webkit-border-bottom-left-radius:100px 75px;
+  -webkit-border-bottom-right-radius:100px 75px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  animation: emotions 5s infinite;
+}
+
+@keyframes blink {
+  48%  {
+    height: 50px;
+    top: 75px;
+    border-radius: 50%;
+  }
+  50%  {
+    height: 0;
+    top: 100px;
+    border-radius: 10px;
+  }
+  52%  {
+    height: 50px;
+    top: 75px;
+    border-radius: 50%;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(-50%, -50px);
+  }
+  25% {
+    transform: translate(-100%, 0);
+  }
+  50% {
+    transform: translate(-50%, 50px);
+  }
+  75% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50px);
+  }
+}
+
+@keyframes emotions {
+  0% {
+    width: 200px;
+    height: 75px;
+    border-radius: 10px 10px 75px 75px;
+    // Webkit specific
+    -webkit-border-bottom-left-radius:100px 75px;
+    -webkit-border-bottom-right-radius:100px 75px;
+    left: 50px;
+  }
+  33% {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    // Webkit specific
+    -webkit-border-bottom-left-radius:50%;
+    -webkit-border-bottom-right-radius:50%;
+    bottom: 50px;
+    left: 112.5px;
+  }
+  66% {
+    width: 200px;
+    height: 75px;
+    border-radius: 75px 75px 10px 10px;
+    // Webkit specific
+    -webkit-border-top-left-radius:100px 75px;
+    -webkit-border-top-right-radius:100px 75px;
+    bottom: 75px;
+    left: 50px;
+  }
+  100% {
+    width: 200px;
+    height: 75px;
+    border-radius: 10px 10px 75px 75px;
+    // Webkit specific
+    -webkit-border-bottom-left-radius:100px 75px;
+    -webkit-border-bottom-right-radius:100px 75px;
+    bottom: 50px;
+    left: 50px;
+  }
 }
