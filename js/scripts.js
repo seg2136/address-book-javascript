@@ -6,9 +6,9 @@ function Contact(firstName, lastName) {
 
   Contact.prototype.fullName = function() {
     return this.firstName + " " + this.lastName;
-  };
+  }
 
-function Address(street, city, state) {
+  function Address(street, city, state) {
     this.street = street;
     this.city = city;
     this.state = state;
@@ -26,9 +26,6 @@ function resetFields() {
   $("input.new-state").val("");
   $("div.new-address").not(':first').remove();
 }
-
-
-
 
 $(document).ready(function() {
   $("#add-address").click(function() {
@@ -48,8 +45,6 @@ $(document).ready(function() {
                                '</div>');
   });
 
-
-
   $("form#new-contact").submit(function(event) {
     event.preventDefault();
 
@@ -63,7 +58,7 @@ $(document).ready(function() {
       var inputtedCity = $(this).find("input.new-city").val();
       var inputtedState = $(this).find("input.new-state").val();
 
-      var newAddress = {inputtedStreet, inputtedCity, inputtedState };
+      var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState );
       newContact.addresses.push(newAddress);
     });
 
